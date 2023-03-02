@@ -40,7 +40,7 @@ const loadDataCata = (datas,name) => {
         <figure class="w-[35%]"><img class="" src="${data.image_url}" alt="Movie"/></figure>
         <div class="card-body w-[65%]">
           <h2 class="card-title">${data.title}</h2>
-          <p class="py-2">${data.details}</p>
+          <p class="py-2">${data.details.slice(0,150)}........</p>
           <div class="flex gap-14 items-center pt-3">
             <div class="flex gap-2 justify-center items-center">
               <div class="avatar">
@@ -64,14 +64,28 @@ const loadDataCata = (datas,name) => {
                 <i class="fa-solid fa-star-half-stroke"></i>
                 <p>${data.rating.number}</p>
               </div>
-            <button class="btn btn-outline btn-error"><i class="fa-solid fa-arrow-right"></i></button>
+              <label onclick="modalDetails('${data._id}')" for="my-modal-6" class="btn btn-outline btn-error"><i class="fa-solid fa-arrow-right"></i></label>
           </div>
         </div>
       </div>
         `;
     dataContainer.appendChild(div);
-
-    console.log(data)
+    
+    // console.log(data)
   }
   // console.log(datas)
 };
+
+const modalDetails = (id) =>{
+
+  const url = `https://openapi.programming-hero.com/api/news/${id}`;
+  fetch(url)
+  .then(res => res.json())
+  .then(data => displayModal(data.data))
+}
+const displayModal =(datas) =>{
+  document.getElementById('modal-title').innerText=`${datas[0].title}`;
+  document.getElementById('modal-details').innerText=`${datas[0].details}`;
+  
+  console.log(datas[0])
+}

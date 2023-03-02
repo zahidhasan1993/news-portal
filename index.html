@@ -13,7 +13,7 @@
 
     <title>Zahid's News</title>
   </head>
-  <body class="container mx-auto" onload="loadData()">
+  <body id="body" class="container mx-auto" onload="loadData()">
     <header>
       <!-- navbar section  -->
       <div class="navbar bg-base-100">
@@ -58,12 +58,18 @@
       <!-- aler section -->
       <div class="alert alert-error shadow-lg">
         <div>
-          <span class="text-white"><span id="alert_number" class="text-black"> 01 </span> Result Found on <span class="text-black" id="alert_text"> breaking news </span></span>
+          <span class="text-white"
+            ><span id="alert_number" class="text-black"> 01 </span> Result Found
+            on
+            <span class="text-black" id="alert_text">
+              breaking news
+            </span></span
+          >
         </div>
       </div>
       <!-- select section  -->
       <section class="flex justify-between my-12">
-        <div class="flex justify-center items-center gap-8" >
+        <div class="flex justify-center items-center gap-8">
           <p class="font-bold">Sort By View:</p>
           <div>
             <select class="select select-ghost w-full max-w-xs">
@@ -90,7 +96,23 @@
     <!-- own js link  -->
     <script src="./js/app.js"></script>
     <!-- font awesome link  -->
-    <script src="https://kit.fontawesome.com/3eb80d79d2.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/3eb80d79d2.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- modal section  -->
+    <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+    <div class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box">
+        <h3 id="modal-title" class="font-bold text-lg"></h3>
+        <p id="modal-details" class="py-4">
+          You've been selected for a chance to get one year of subscription to
+          use Wikipedia for free!
+        </p>
+        <div class="modal-action">
+          <label for="my-modal-6" class="btn">Yay!</label>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
-
