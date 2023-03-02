@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- daisyUi link  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.51.3/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <title>Zahid's News</title>
+  </head>
+  <body class="container mx-auto" onload="loadData()">
+    <header>
+      <!-- navbar section  -->
+      <div class="navbar bg-base-100">
+        <div class="flex-1">
+          <a class="btn btn-error normal-case text-xl">The Daily News</a>
+        </div>
+        <div class="flex-none">
+          <div class="pr-3 flex gap-2">
+            <p>Blogs</p>
+            <p>News</p>
+          </div>
+          <div class="dropdown dropdown-end">
+            <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+              <div class="w-10 rounded-full">
+                <img src="https://picsum.photos/200/300" />
+              </div>
+            </label>
+            <ul
+              tabindex="0"
+              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a class="justify-between">
+                  Profile
+                  <span class="badge">New</span>
+                </a>
+              </li>
+              <li><a>Settings</a></li>
+              <li><a>Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr class="container mx-auto" />
+    </header>
+    <main>
+      <!-- catagory section  -->
+      <section
+        id="catagory"
+        class="my-12 text-xl md:flex md:flex-row lg:gap-16"
+      ></section>
+      <!-- aler section -->
+      <div class="alert alert-error shadow-lg">
+        <div>
+          <span class="text-white"><span id="alert_number" class="text-black"> 01 </span> Result Found on <span class="text-black" id="alert_text"> breaking news </span></span>
+        </div>
+      </div>
+      <!-- select section  -->
+      <section class="flex justify-between my-12">
+        <div class="flex justify-center items-center gap-8" >
+          <p class="font-bold">Sort By View:</p>
+          <div>
+            <select class="select select-ghost w-full max-w-xs">
+              <option disabled selected>Default</option>
+              <option>Svelte</option>
+              <option>Vue</option>
+              <option>React</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-error">Todays Pick</button>
+          <button class="btn btn-success">Trending</button>
+        </div>
+      </section>
+      <hr />
+
+      <!-- select by catagory section  -->
+      <section id="news_cata"></section>
+    </main>
+
+    <!-- tailwind Link  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- own js link  -->
+    <script src="./js/app.js"></script>
+    <!-- font awesome link  -->
+    <script src="https://kit.fontawesome.com/3eb80d79d2.js" crossorigin="anonymous"></script>
+  </body>
+</html>
+
